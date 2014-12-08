@@ -1,0 +1,40 @@
+
+      html, body {
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+		overflow: hidden;
+		font-family: "Arial";
+		background-color: #FFFFF0;
+      }
+	  
+	  #map-canvas {
+		height: 80%;
+		width: 100%;
+		}
+		
+	  #input-panel{
+		position: absolute;
+		top: 80px;
+		right: 5px;
+	    height:45%;
+		width: 15%;
+		border: 1px solid black;
+		background: white;
+		box-shadow: 10px 10px 5px #888888;
+ 
+		}
+		
+	   #text {
+	   
+	    padding-left: 12px;
+	   }
+	   
+	   #name {
+	    text-align: right;
+	    padding-right: 5px;
+	   
+	   }
+	   
+		
+

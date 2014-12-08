@@ -1,58 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="directionsstyle.css">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <title>Alternate Transit</title>
 	<h1> <center>Alternate Transit Via Google Maps </center></h1>
-    <style>
-      html, body {
-        height: 100%;
-        margin: 0px;
-        padding: 0px;
-		overflow: hidden;
-		font-family: "Arial";
-		background-color: #FFFFF0;
-      }
-	  
-	  #map-canvas {
-		height: 80%;
-		width: 100%;
-		}
-		
-     <!-- #panel {
-        
-        background-color: #fff;
-        padding: 5px;
-        border: 1px solid #999;
-		} -->
-		
-	  #input-panel{
-		position: absolute;
-		top: 80px;
-		right: 5px;
-	    height:45%;
-		width: 15%;
-		border: 1px solid black;
-		background: white;
-		box-shadow: 10px 10px 5px #888888;
- 
-		}
-		
-	   #text {
-	   
-	   padding-left: 12px;
-	   }
-	   
-	   #name {
-	   text-align: right;
-	   padding-right: 5px;
-	   
-	   }
-	   
-		
-      }
-    </style>
+
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script> 
 <!--	<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false&v=3&libraries=geometry"></script> !-->
  <script>
@@ -193,39 +147,6 @@ function computeTotalTime(result) {
   return total;
   
 }
-/*
-function getCoordinates (id) {
-  var value = id.value;
-  i = 0;
-  var coordinateA = "";
-  while (value[i] != ',') {
-     coordinateA = coordinateA + value[i];
-	 i = i + 1;
-  }
-  i = i + 2;
-  var coordinateB = "";
-  while (i<value.length) {
-     coordinateB = coordinateB + value[i];
-	 i = i + 1;
-  }
-  coordinateA = parseFloat(coordinateA);
-  coordinateB = parseFloat(coordinateB);
-  var coordinates = [coordinateA, coordinateB];
-  return coordinates;
-}
-
-function getDistance () {
-  coordinateA = getCoordinates(document.getElementById('start'));
-  coordinateB = getCoordinates(document.getElementById('end'));
-  var latLngA = new google.maps.LatLng(coordinateA[0], coordinateA[1]);
-  var latLngB = new google.maps.LatLng(coordinateB[0], coordinateB[1]);
-  var distance = google.maps.geometry.spherical.computeDistanceBetween(latLngA, latLngB);
-  document.getElementById("anything").innerHTML = distance;
-  return distance
-
-}
-*/
-
 google.maps.event.addDomListener(window, 'load', initialize);
 
     </script>
