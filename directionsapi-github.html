@@ -3,18 +3,20 @@
 	<head>
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 		<meta charset="utf-8">
-		<title>Travel modes in directions</title>
+		<title> Alternate Transit </title>
 		<h1> <center>Alternate Transit Via Google Maps </center></h1>
 		<link rel="stylesheet" href="stylesheet.css">
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script> 
 		<script src="map.js"></script>
 	</head>
 	<body>
+		
 		<div id="map-canvas"></div> 
 		<div id="input-panel">
 		<br>
 		<div id="text">
 		<b>Mode of Travel: </b>
+		
 		
 		<select id="mode" onchange="computeTotalTime(directionsDisplay.directions);">
 		  <option value="WALKING">Walking</option>
@@ -62,6 +64,7 @@
 		<p> <b> Time: </b> <span id="totalMins"></span></p>
 		</div>
 		</div>
+		<input id="pac-input" class="controls" type="text" placeholder="Search Box">
 		<p id="name"> Created by Anam Alvi and Jahid Ahmed 2014 &#169; </p> 
   </body>
 </html>
