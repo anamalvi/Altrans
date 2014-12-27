@@ -75,7 +75,7 @@ function initialize()
       bounds.extend(place.geometry.location);
     }
 
-    map_one.fitBounds(bounds);
+    map.fitBounds(bounds);
   });
 }
 
