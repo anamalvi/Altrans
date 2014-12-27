@@ -41,10 +41,9 @@ function initialize()
     google.maps.event.addListener(searchBox, 'places_changed', function() {
     var places = searchBox.getPlaces();
 	
-	//don't currently understand what this if statement is really doing
-    //if (places.length == 0) {
-    //  return;
-    //}
+    if (places.length == 0) {
+      return;
+    }
 	
     for (var i = 0, marker; marker = markers[i]; i++) {
       marker.setMap(null);
