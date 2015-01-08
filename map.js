@@ -33,6 +33,13 @@ function initialize()
 	computeTotalTime(directionsDisplay.directions);  
 	});
 	
+	//Initialize bounds to keep the map in
+	var defaultBounds = new google.maps.LatLngBounds(
+      new google.maps.LatLng(43.669097, -79.392308),
+      new google.maps.LatLng(43.656528, -79.384032));
+	  
+	map.fitBounds(defaultBounds);
+  
 	// Search Bar
 	var markers = [];
     var input = (document.getElementById('pac-input'));
@@ -96,6 +103,13 @@ function calcRoute()
 	{
     directionsDisplay.setDirections(response);
 	} 	
+  });
+  
+  // Bias the SearchBox results towards places that are within the bounds of the
+  // current map's viewport.
+  google.maps.event.addListener(map, 'bounds_changed', function() {
+    var bounds = map.getBounds();
+    searchBox.setBounds(bounds);
   });
 }
 
