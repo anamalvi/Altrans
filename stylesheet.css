@@ -23,16 +23,6 @@ html, body {
 	box-shadow: 10px 10px 5px #888888;
 }
 
-#icon {
-	position: absolute;
-	top: 20px;
-	right:560px;
-}
-#altrans {
-	text-align: center;
-	
-}
-
 #text {
 	padding-left: 12px;
 }
