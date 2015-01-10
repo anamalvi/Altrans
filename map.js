@@ -13,6 +13,20 @@ var transportFactors =
 	'SPEED-WALKING': 0.8
 }
 
+var buildings = 
+{
+	"Bahen": "43.6596, -79.3972",
+	"Robarts": "43.6644, -79.3994",
+	"Bancroft": "43.660888, -79.399931",
+	"Brennan": "",
+	"Carr": "",
+	"Chestnut": "",
+	"Earth Science": "",
+	"Exam Centre": "",
+	"Fitzgerald": "",
+	"Galbraith": "",
+}
+
 function initialize() 
 {
 	// Rendering Directions & Times
@@ -40,64 +54,15 @@ function initialize()
 	  
 	map.fitBounds(defaultBounds);
   
-	// Search Bar
-	var markers = [];
-    var input = (document.getElementById('pac-input'));
-	map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-	var searchBox = new google.maps.places.SearchBox(input);
-    google.maps.event.addListener(searchBox, 'places_changed', function() {
-    var places = searchBox.getPlaces();
-	
-    if (places.length == 0) {
-      return;
-    }
-	
-    for (var i = 0, marker; marker = markers[i]; i++) {
-      marker.setMap(null);
-    }
-
-    // For each place, get the icon, place name, and location.
-    markers = [];
-    var bounds = new google.maps.LatLngBounds();
-    for (var i = 0, place; place = places[i]; i++) {
-      var image = {
-        url: place.icon,
-        size: new google.maps.Size(71, 71),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(17, 34),
-        scaledSize: new google.maps.Size(25, 25)
-      };
-
-      // Create a marker for each place.
-      var marker = new google.maps.Marker({
-        map: map,
-        icon: image,
-        title: place.name,
-        position: place.geometry.location
-      });
-
-      markers.push(marker);
-
-      bounds.extend(place.geometry.location);
-    }
-
-    map.fitBounds(bounds);
-	//var listener = google.maps.event.addListener(map, 'idle', function() {
-	//if (map.getZoom() > 17) 
-	//{
-	map.setZoom(17);  
-	//google.maps.event.removeListener(listener);
-	//}
-	//});
-  });
+	map.setZoom(14);  
 }
 
 function calcRoute() 
 {
-  var start = document.getElementById('start').value;
-  var end = document.getElementById('end').value;  
-  
-  var request = 
+  var start = buildings[document.getElementById('start').value];
+  var end = buildings[document.getElementById('end').value];  
+ 
+ var request = 
   {
       origin: start,
       destination: end,
@@ -110,13 +75,6 @@ function calcRoute()
 	{
     directionsDisplay.setDirections(response);
 	} 	
-  });
-  
-  // Bias the SearchBox results towards places that are within the bounds of the
-  // current map's viewport.
-  google.maps.event.addListener(map, 'bounds_changed', function() {
-    var bounds = map.getBounds();
-    searchBox.setBounds(bounds);
   });
 }
 
@@ -135,7 +93,7 @@ function computeTotalDistance(result)
   return total;
 }
  
-function checkTimes (totalMins, totalSecs) 
+function checkTimes(totalMins, totalSecs) 
 {
   var totalMinutes, totalSeconds, totalTime;
   
@@ -206,6 +164,16 @@ function computeTotalTime(result)
  
   document.getElementById('totalMins').innerHTML = totalMins + totalSecs;
   return total;
+}
+
+function startPrediction()
+{
+	// Start box prediction
+}
+
+function endPrediction()
+{
+	// End box prediction
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);

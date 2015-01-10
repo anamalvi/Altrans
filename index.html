@@ -30,41 +30,22 @@
 		<br>
 		<br>
 		<b>Start: </b>
-		
-		<select id="start" onchange="calcRoute();">
-		  <option value="43.6596, -79.3972">Bahen Centre</option>
-		  <option value="43.6644, -79.3994">Robarts Library</option>
-		  <option value="43.660888, -79.399931">Bancroft Building</option>
-		  <option value="43.662114, -79.398563">Sidney Smith</option>
-		  <option value="43.65843, -79.392814">Exam Centre</option>
-		  <option value="43.662673, -79.395162">University College</option>
-		  <option value="43.659015, -79.392846">Health Sciences Building</option>
-		  <option value="43.661853, -79.398009">Lash Miller</option>
-		  <option value="43.660885, -79.398706">McLennan Physical</option>
-		</select>
+		<input id="start" type="text" placeholder="Starting Position" onkeypress="startPrediction()">
 		
 		<br>
 		<br>
 		<b> End: </b>
+		<input id="end" type="text" placeholder="Ending Position" onkeypress="endPrediction()">
 		
-		<select id="end" onchange="calcRoute();">
-		  <option value="43.6596, -79.3972">Bahen Centre</option>
-		  <option value="43.6644, -79.3994">Robarts Library</option>
-		  <option value="43.660888, -79.399931">Bancroft Building</option>
-		  <option value="43.662114, -79.398563">Sidney Smith</option>
-		  <option value="43.65843, -79.392814">Exam Centre</option>
-		  <option value="43.662673, -79.395162">University College</option>
-		  <option value="43.659015, -79.392846">Health Sciences Building</option>
-		  <option value="43.661853, -79.398009">Lash Miller</option>
-		  <option value="43.660885, -79.398706">McLennan Physical</option>
-		</select>
-		
+		<br>
+		<br>
+		<input type="button" onclick="calcRoute()" value="Submit">
+	
 		<br>
 		<p> <b> Distance: </b> <span id="totalDist"> </span> </p>
 		<p> <b> Time: </b> <span id="totalMins"></span></p>
 		</div>
 		</div>
-		<input id="pac-input" class="controls" type="text" placeholder="Search Box">
 		<p id="name"> Created by Anam Alvi and Jahid Ahmed 2014 &#169; </p> 
   </body>
 </html>
