@@ -1,7 +1,6 @@
 var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
 var map;
-var bahen = new google.maps.LatLng(43.6596, -79.3972);
 
 var transportFactors = 
 {
@@ -34,8 +33,7 @@ function initialize()
 	
 	var mapOptions = 
 	{
-	zoom: 17,
-	center: bahen
+	zoom: 17
 	}
 	
 	map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -164,16 +162,6 @@ function computeTotalTime(result)
  
   document.getElementById('totalMins').innerHTML = totalMins + totalSecs;
   return total;
-}
-
-function startPrediction()
-{
-	// Start box prediction
-}
-
-function endPrediction()
-{
-	// End box prediction
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);

@@ -6,16 +6,19 @@
 		<title> ALTRANS </title>
 		<h1 id = "altrans"> ALTRANS <img src="compass1.png" style="width:40px; height:40px" id="icon"></h1>
 		<link rel="stylesheet" href="stylesheet.css">
+		<link rel="stylesheet" href="jquery-ui.css">
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>		
 		<script src="map.js"></script>
+		<script src="predictiveui.js"></script>
+		<script src="predictiveui2.js"></script>
 	</head>
+	
 	<body>
-		
 		<div id="map-canvas"></div> 
 		<div id="input-panel">
 		<br>
 		<div id="text">
-		<b>Mode of Travel: </b>
+		<b> Mode of Travel: </b>
 		
 		
 		<select id="mode" onchange="computeTotalTime(directionsDisplay.directions);">
@@ -30,12 +33,28 @@
 		<br>
 		<br>
 		<b>Start: </b>
-		<input id="start" type="text" placeholder="Starting Position" onkeypress="startPrediction()">
+		<input id="start" type="text" placeholder="Starting Position">
 		
 		<br>
 		<br>
 		<b> End: </b>
-		<input id="end" type="text" placeholder="Ending Position" onkeypress="endPrediction()">
+		<input id="end" type="text" placeholder="Ending Position">
+		
+		<script>
+		$(function() {
+		var availableTags = [
+		  "Bahen",
+		  "Robarts",
+		  "Bancroft"
+		];
+		$( "#start" ).autocomplete({
+		source: availableTags
+		});
+		$( "#end" ).autocomplete({
+		source: availableTags
+		});
+		});
+		</script>
 		
 		<br>
 		<br>
