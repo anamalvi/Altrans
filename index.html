@@ -33,12 +33,12 @@
 		<br>
 		<br>
 		<b>Start: </b>
-		<input id="start" type="text" placeholder="Starting Position">
+		<input id="start" type="text" placeholder="Starting Position" onchange="calcRoute();">
 		
 		<br>
 		<br>
 		<b> End: </b>
-		<input id="end" type="text" placeholder="Ending Position">
+		<input id="end" type="text" placeholder="Ending Position" onchange="calcRoute();">
 		
 		<script>
 		$(function() {
@@ -56,11 +56,6 @@
 		});
 		</script>
 		
-		<br>
-		<br>
-		<input type="button" onclick="calcRoute()" value="Submit">
-	
-		<br>
 		<p> <b> Distance: </b> <span id="totalDist"> </span> </p>
 		<p> <b> Time: </b> <span id="totalMins"></span></p>
 		</div>

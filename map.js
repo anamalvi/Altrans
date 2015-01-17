@@ -14,16 +14,16 @@ var transportFactors =
 
 var buildings = 
 {
-	"Bahen": "43.6596, -79.3972",
-	"Robarts": "43.6644, -79.3994",
-	"Bancroft": "43.660888, -79.399931",
-	"Brennan": "",
-	"Carr": "",
-	"Chestnut": "",
-	"Earth Science": "",
-	"Exam Centre": "",
-	"Fitzgerald": "",
-	"Galbraith": "",
+	"bahen": "43.6596, -79.3972",
+	"robarts": "43.6644, -79.3994",
+	"bancroft": "43.660888, -79.399931",
+	"brennan": "",
+	"carr": "",
+	"chestnut": "",
+	"earth science": "",
+	"exam centre": "",
+	"fitzgerald": "",
+	"galbraith": "",
 }
 
 function initialize() 
@@ -57,8 +57,8 @@ function initialize()
 
 function calcRoute() 
 {
-  var start = buildings[document.getElementById('start').value];
-  var end = buildings[document.getElementById('end').value];  
+  var start = buildings[document.getElementById('start').value.toLowerCase()];
+  var end = buildings[document.getElementById('end').value.toLowerCase()];  
  
  var request = 
   {
